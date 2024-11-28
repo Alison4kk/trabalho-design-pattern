@@ -7,7 +7,6 @@ class BubbleSortOrdenacaoStrategy implements OrdenacaoStrategy {
 
   public function ordenar(array $aItens, string $sColuna, string $sModo): array {
     $n = count($aItens);
-
     for ($i = 0; $i < $n - 1; $i++) {
       for ($j = 0; $j < $n - $i - 1; $j++) {
         // Obtém os valores da propriedade

@@ -48,9 +48,12 @@
               <div class="mb-3">
                 <label class="form-label">Ordenar Por:</label>
                 <select name="ordenar-coluna" class="form-select">
-                  <option <?= ( isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'id') ? 'selected' : '' ?> value="id">ID</option>
-                  <option <?= ( isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'nome') ? 'selected' : '' ?> value="nome">Nome</option>
-                  <option <?= ( isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'email') ? 'selected' : '' ?> value="email">Email</option>
+                  <option <?= (isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'id') ? 'selected' : '' ?>
+                    value="id">ID</option>
+                  <option <?= (isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'nome') ? 'selected' : '' ?>
+                    value="nome">Nome</option>
+                  <option <?= (isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'email') ? 'selected' : '' ?>
+                    value="email">Email</option>
                 </select>
               </div>
             </div>
@@ -58,8 +61,23 @@
               <div class="mb-3">
                 <label class="form-label">&nbsp;</label>
                 <select name="ordenar-modo" class="form-select">
-                  <option <?= ( isset($_GET['ordenar-modo']) && $_GET['ordenar-modo'] == 'ASC') ? 'selected' : '' ?>  value="ASC">Crescente</option>
-                  <option <?= ( isset($_GET['ordenar-modo']) && $_GET['ordenar-modo'] == 'DESC') ? 'selected' : '' ?> value="DESC">Descrescente</option>
+                  <option <?= (isset($_GET['ordenar-modo']) && $_GET['ordenar-modo'] == 'ASC') ? 'selected' : '' ?>
+                    value="ASC">Crescente</option>
+                  <option <?= (isset($_GET['ordenar-modo']) && $_GET['ordenar-modo'] == 'DESC') ? 'selected' : '' ?>
+                    value="DESC">Descrescente</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="mb-3">
+                <label class="form-label">&nbsp;</label>
+                <select name="ordenar-estrategia" class="form-select">
+                  <option <?= (isset($_GET['ordenar-estrategia']) && $_GET['ordenar-estrategia'] == 'bubblesort') ? 'selected' : '' ?>
+                  value="bubblesort">Bubble Sort</option>
+                  <option <?= (isset($_GET['ordenar-estrategia']) && $_GET['ordenar-estrategia'] == 'mergesort') ? 'selected' : '' ?>
+                    value="mergesort">Merge Sort</option>
+                  <option <?= (isset($_GET['ordenar-estrategia']) && $_GET['ordenar-estrategia'] == 'quicksort') ? 'selected' : '' ?>
+                  value="quicksort">Quick Sort</option>
                 </select>
               </div>
             </div>
@@ -76,7 +94,7 @@
       </div>
     </div>
     <!-- Card de listagem -->
-    <div class="card shadow-sm">
+    <div class="card shadow-sm mb-3">
       <div class="card-header bg-primary text-white"> Usuários Cadastrados </div>
       <div class="card-body">
         <table class="table table-striped">
@@ -89,7 +107,7 @@
             </tr>
           </thead>
           <tbody>
-            <? foreach ($aUsuarios as $oUsuario): ?>
+            <?php foreach ($aUsuarios as $oUsuario): ?>
               <tr>
                 <td> <?= $oUsuario->id ?></td>
                 <td> <?= $oUsuario->nome ?></td>
@@ -99,7 +117,40 @@
                   <button class="btn btn-sm btn-danger">Excluir</button>
                 </td>
               </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+        <!-- Card de listagem -->
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white"> Tempos de Cada Ordenação </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Estrategia</th>
+              <th>Tempo em Segundos</th>
+            </tr>
+          </thead>
+          <tbody>
+               <tr>
+                <td>Estrategia selecionada: (<?= $sOrdenarEstrategia ?>)</td>
+                <td> <?= $nTempoSelecionada ?></td>
+              </tr>
+              <tr>
+                <td>Bubble Sort</td>
+                <td> <?= $nTempoBubbleSort ?></td>
+              </tr>
+              <tr>
+                <td>Quick Sort</td>
+                <td> <?= $nTempoQuickSort ?></td>
+              </tr>
+              <tr>
+                <td>Merge Sort</td>
+                <td> <?= $nTempoMergeSort ?></td>
+              </tr>
           </tbody>
         </table>
       </div>

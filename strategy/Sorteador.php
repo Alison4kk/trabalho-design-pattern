@@ -23,13 +23,16 @@ class Sorteador {
 
     switch ($this->sEstrategia) {
       case 'bubblesort':
+        echo 'bubblesort';
         return new BubbleSortOrdenacaoStrategy();
 
       case 'quicksort':
+        echo 'quicksort';
         return new QuickSortOrdenacaoStrategy();
       
       case 'mergesort': 
-        return new QuickSortOrdenacaoStrategy();
+        echo 'mergesort';
+        return new MergeSortOrdenacaoStrategy();
 
       default:
         return new BubbleSortOrdenacaoStrategy();

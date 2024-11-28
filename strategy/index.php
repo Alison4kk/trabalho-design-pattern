@@ -3,8 +3,9 @@ require_once 'Usuario.php';
 require_once 'Sorteador.php';
 
 
-$sOrdenarCampo = $_GET['ordenar-coluna'] ?? 'id';
-$sOrdenarModo  = $_GET['ordenar-modo'] ?? 'ASC';
+$sOrdenarCampo      = $_GET['ordenar-coluna'] ?? 'id';
+$sOrdenarModo       = $_GET['ordenar-modo'] ?? 'ASC';
+$sOrdenarEstrategia = $_GET['ordenar-estrategia'] ?? 'quicksort';
 
 $aUsuarios = [];
 
@@ -31,16 +32,19 @@ $oSorteador = new Sorteador(
   aItens: $aUsuarios,
   sColuna: $sOrdenarCampo,
   sModo: $sOrdenarModo,
-  sEstrategia: 'mergesort'
+  sEstrategia: $sOrdenarEstrategia
 );
 
-$aUsuarios = $oSorteador->sortear();
-echo $oSorteador->ultimoTempo;
+$aUsuarios         = $oSorteador->sortear();
+$nTempoSelecionada = $oSorteador->ultimoTempo;
 
 $oSorteador->setEstrategia('bubblesort')->sortear();
-echo $oSorteador->ultimoTempo;
+$nTempoBubbleSort = $oSorteador->ultimoTempo;
 
 $oSorteador->setEstrategia('quicksort')->sortear();
-echo $oSorteador->ultimoTempo;
+$nTempoQuickSort = $oSorteador->ultimoTempo;
+
+$oSorteador->setEstrategia('mergesort')->sortear();
+$nTempoMergeSort = $oSorteador->ultimoTempo;
 
 include 'view.php';

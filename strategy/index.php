@@ -1,5 +1,10 @@
 <?php
 require_once 'Usuario.php';
+require_once 'Sorteador.php';
+
+
+$sOrdenarCampo = $_GET['ordenar-coluna'] ?? 'id';
+$sOrdenarModo  = $_GET['ordenar-modo'] ?? 'ASC';
 
 $aUsuarios = [];
 
@@ -20,9 +25,22 @@ $aUsuarios[] = new Usuario(14, 'Roberta Dias', 'roberta.dias@email.com');
 $aUsuarios[] = new Usuario(15, 'Tiago Martins', 'tiago.martins@email.com');
 $aUsuarios[] = new Usuario(16, 'Larissa Carvalho', 'larissa.carvalho@email.com');
 
-$sOrdenarCampo = $_GET['ordenar-coluna'] ?? 'id'; 
-$sOrdenarModo = $_GET['ordenar-modo'] ?? 'ASC'; 
 
 
+$oSorteador = new Sorteador(
+  aItens: $aUsuarios,
+  sColuna: $sOrdenarCampo,
+  sModo: $sOrdenarModo,
+  sEstrategia: 'mergesort'
+);
+
+$aUsuarios = $oSorteador->sortear();
+echo $oSorteador->ultimoTempo;
+
+$oSorteador->setEstrategia('bubblesort')->sortear();
+echo $oSorteador->ultimoTempo;
+
+$oSorteador->setEstrategia('quicksort')->sortear();
+echo $oSorteador->ultimoTempo;
 
 include 'view.php';

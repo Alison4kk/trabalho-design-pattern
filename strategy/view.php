@@ -42,14 +42,37 @@
     <h1 class="mb-4">Listagem de Usuários</h1>
     <div class="card shadow-sm mb-4">
       <div class="card-body">
-        <div class="mb-3">
-          <label  class="form-label">Ordenar Por:</label>
-          <select class="form-select">
-            <option value="1">ID</option>
-            <option value="2">Nome</option>
-            <option value="3">Email</option>
-          </select>
-        </div>
+        <form action="" method="get">
+          <div class="row">
+            <div class="col-3">
+              <div class="mb-3">
+                <label class="form-label">Ordenar Por:</label>
+                <select name="ordenar-coluna" class="form-select">
+                  <option <?= ( isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'id') ? 'selected' : '' ?> value="id">ID</option>
+                  <option <?= ( isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'nome') ? 'selected' : '' ?> value="nome">Nome</option>
+                  <option <?= ( isset($_GET['ordenar-coluna']) && $_GET['ordenar-coluna'] == 'email') ? 'selected' : '' ?> value="email">Email</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="mb-3">
+                <label class="form-label">&nbsp;</label>
+                <select name="ordenar-modo" class="form-select">
+                  <option <?= ( isset($_GET['ordenar-modo']) && $_GET['ordenar-modo'] == 'ASC') ? 'selected' : '' ?>  value="ASC">Crescente</option>
+                  <option <?= ( isset($_GET['ordenar-modo']) && $_GET['ordenar-modo'] == 'DESC') ? 'selected' : '' ?> value="DESC">Descrescente</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="mb-3">
+                <label class="form-label">&nbsp;</label>
+                <div>
+                  <button class="btn btn-secondary">Aplicar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <!-- Card de listagem -->

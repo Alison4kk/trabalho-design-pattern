@@ -8,7 +8,7 @@ Este repositorio tem como objetivo aplicar estudos sobre Design Patterns com exe
 
 ## Como instalar
 
-Requisitos: PHP 8.0+.
+Requisitos: PHP 7.0+.
 
 1. Clone o repositório
 2. Execute o comando `php -S localhost:8000` na pasta raiz do projeto

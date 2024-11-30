@@ -1,6 +1,6 @@
 # Estudo Design Patterns
 
-Feito por: [@Alison Loffi](https://github.com/Alison4kk)
+Feito por: [@AlisonLoffi](https://github.com/Alison4kk)
 
 ## Introdução
 

@@ -10,32 +10,40 @@
 <body>
   <div class="container py-5">
     <h1 class="text-center mb-4">Design Patterns</h1>
-    <p class="text-center text-muted">Explore exemplos práticos de dois padrões de projeto amplamente utilizados no desenvolvimento de software.</p>
-    
+    <p class="text-center text-muted">Explore exemplos práticos de dois padrões de projeto amplamente utilizados no
+      desenvolvimento de software.</p>
     <div class="row g-4">
       <!-- Strategy Pattern -->
       <div class="col-md-6">
         <div class="card shadow-sm">
           <div class="card-body">
             <h5 class="card-title">Padrão Strategy</h5>
-            <p class="card-text">O padrão Strategy permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis. Ele facilita a alteração ou adição de comportamentos sem modificar o código do cliente.</p>
+            <p class="card-text">O padrão Strategy permite definir uma família de algoritmos, encapsulá-los e torná-los
+              intercambiáveis. Ele facilita a alteração ou adição de comportamentos sem modificar o código do cliente.
+            </p>
             <a href="/strategy" class="btn btn-primary">Ver Exemplo</a>
           </div>
         </div>
       </div>
-
       <!-- Factory Pattern -->
       <div class="col-md-6">
         <div class="card shadow-sm">
           <div class="card-body">
             <h5 class="card-title">Padrão Factory</h5>
-            <p class="card-text">O padrão Factory fornece uma maneira de criar objetos sem especificar a classe exata que será instanciada. Ele promove flexibilidade e reutilização de código.</p>
+            <p class="card-text">O padrão Factory fornece uma maneira de criar objetos sem especificar a classe exata
+              que será instanciada. Ele promove flexibilidade e reutilização de código.</p>
             <a href="/factory" class="btn btn-primary">Ver Exemplo</a>
           </div>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12 mt-5">
+        <div class="alert alert-info" role="alert">
+          <p class="mb-0">Desenvolvido por: <a href="https://github.com/Alison4kk">@AlisonLoffi</a>
+        </div>
+      </div>
+    </div>
   </div>
-
 </body>
 </html>

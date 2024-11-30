@@ -1,10 +1,13 @@
 # Estudo Design Patterns
 
+Feito por: [@Alison Loffi](https://github.com/Alison4kk)
 
 ## Introdução
 
 Este repositorio tem como objetivo aplicar estudos sobre Design Patterns com exemplos práticos. Foi feito para um trabalho da Faculdade, materia Linquagens de Programação e Paradigmas, curso de Sistemas da Informação.
 
+
+Para esse estudo foi usado a linguagem PHP por conta de sua simplicidade e facilidade de implementação de padrões de projeto.
 
 ## Como instalar
 
